@@ -24,6 +24,8 @@ clean:
 
 install: all
 	@cp -f ${BIN} "${DESTDIR}${PREFIX}/bin"
+	@mkdir -p ${DESTDIR}${PREFIX}/share/tdq
+	@cp -rf dict ${DESTDIR}${PREFIX}/share/tdq
 
 uninstall:
 	@rm -f "${DESTDIR}${PREFIX}/bin/ab2td"

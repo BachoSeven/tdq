@@ -18,40 +18,50 @@ Tdq is a fast dictionary lookup program for tinydict dictionary files, which can
 For importing xdxf files, these steps are necessary (dict.xdxf is the
 input xdxf dictionary):
 
-    cat dict.xdxf | xd2td | tds | sed 's/&amp;/\&/g' >dict.td
-    tdi <dict.td >dict.ti
+```
+cat dict.xdxf | xd2td | tds | sed 's/&amp;/\&/g' >dict.td
+tdi <dict.td >dict.ti
+```
 
 Importing stardict files is quite similar (sdict.dz is a stardict
 definition file and sdict.idx is its index file):
 
-    zcat sdict.dz | sd2td sdict.idx | tds >dict.td
-    tdi <dict.td >dict.ti
+```
+zcat sdict.dz | sd2td sdict.idx | tds >dict.td
+tdi <dict.td >dict.ti
+```
 
 Arpabet pronunciations, such as CMUDict or BEEP, can be converted to
 IPA and imported with these commands (dict.ab lists words with their
 Arpabet pronunciations):
 
-    cat dict.ab | ab2td | tds >dict.td
-    tdi <dict.td >dict.ti
+```
+cat dict.ab | ab2td | tds >dict.td
+tdi <dict.td >dict.ti
+```
 
 Now the dicts[] array in tdq.c should be edited to add the new
 dictionary files:
 
-	 #define DICTROOT	"/my/dicts/dir/"
+```
+#define DICTROOT	"/my/dicts/dir/"
 
-	 static struct dictpath {
-	       char *td;	/* tinydict file */
-	       char *ti;	/* tinydict index; tdi output */
-	       char *sign;	/* dict sign characters */
-	 } dicts[] = {
-	       {DICTROOT "dict.td", DICTROOT "dict.ti", "d"},
-	 };
+static struct dictpath {
+      char *td;	/* tinydict file */
+      char *ti;	/* tinydict index; tdi output */
+      char *sign;	/* dict sign characters */
+} dicts[] = {
+      {DICTROOT "dict.td", DICTROOT "dict.ti", "d"},
+};
+```
 
 The third field can be used to select the dictionary to search.
 After compiling you can use tdq:
 
-    tdq word		# look up word in default dictionaries (m sign)
-    tdq word*		# list of all words starting with word
-    tdq *word*		# list of all words containing word
-    tdq / word		# search word in all dictionary files
-    tdq s word		# search word in dictionaries with sign s
+```
+tdq word		# look up word in default dictionaries (m sign)
+tdq word*		# list of all words starting with word
+tdq *word*		# list of all words containing word
+tdq / word		# search word in all dictionary files
+tdq s word		# search word in dictionaries with sign s
+```
