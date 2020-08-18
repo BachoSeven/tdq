@@ -1,3 +1,10 @@
+## Tdq
+
+This is a clone of `tdq` from the [LITCAVE](https://litcave.rudi.ir/).
+I just adapted it for my own setup, feel free to steal the converted dictionaries (the repo is a little under 100 MB, in case you want to clone it)<br><br>
+
+## Original README:
+
 TDQ
 ===
 
