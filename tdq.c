@@ -23,7 +23,7 @@
 #define TD_START	1
 #define TD_OCCUR	2
 
-#define DICTROOT	"/usr/share/tdq"
+#define DICTROOT	"/usr/share/tdq/dict"
 
 static struct dictpath {
 	char *td;	/* tinydict file */
