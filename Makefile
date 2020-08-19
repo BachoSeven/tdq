@@ -1,7 +1,7 @@
 CC = cc
-CFLAGS = -Wall -O2
+CFLAGS = -Wall -O2 -pedantic
 LDFLAGS =
-BIN = ab2td sd2td tdi tdq tds xd2td
+BIN = tdq tdi tds ab2td sd2td xd2td
 PREFIX=/usr/local
 
 all: ${BIN}
@@ -34,3 +34,4 @@ uninstall:
 	@rm -f "${DESTDIR}${PREFIX}/bin/tdq"
 	@rm -f "${DESTDIR}${PREFIX}/bin/tds"
 	@rm -f "${DESTDIR}${PREFIX}/bin/xd2td"
+	@rm -rf ${DESTDIR}${PREFIX}/share/tdq

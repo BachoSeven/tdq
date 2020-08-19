@@ -30,15 +30,15 @@ static struct dictpath {
 	char *ti;	/* tinydict index; tdi output */
 	char *sign;	/* dict sign characters */
 } dicts[] = {
-	{DICTROOT "etimology.td", DICTROOT "etimology.ti", "th"},
-	{DICTROOT "foldoc.td", DICTROOT "foldoc.ti", "th"},
-	{DICTROOT "gcide.td", DICTROOT "gcide.ti", "th"},
-	{DICTROOT "gnulinux.td", DICTROOT "gnulinux.ti", "th"},
-	{DICTROOT "jargon.td", DICTROOT "jargon.ti", "th"},
-	{DICTROOT "ita.td", DICTROOT "ita.ti", "th"},
-	{DICTROOT "engturk.td", DICTROOT "thesaurus.ti", "th"},
-	{DICTROOT "turkeng.td", DICTROOT "turkeng.ti", "th"},
+	{DICTROOT "engturk.td", DICTROOT "thesaurus.ti", "etu"},
+	{DICTROOT "etymology.td", DICTROOT "etymology.ti", "et"},
+	{DICTROOT "foldoc.td", DICTROOT "foldoc.ti", "fd"},
+	{DICTROOT "gcide.td", DICTROOT "gcide.ti", "gc"},
+	{DICTROOT "gnulinux.td", DICTROOT "gnulinux.ti", "gl"},
+	{DICTROOT "ita.td", DICTROOT "ita.ti", "it"},
+	{DICTROOT "jargon.td", DICTROOT "jargon.ti", "ja"},
 	{DICTROOT "thesaurus.td", DICTROOT "thesaurus.ti", "th"},
+	{DICTROOT "turkeng.td", DICTROOT "turkeng.ti", "tue"},
 };
 
 /* tinydict index file header */
